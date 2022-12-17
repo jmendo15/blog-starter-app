@@ -6,11 +6,18 @@ import { SignIn, SignOut, useAuthentication } from "../services/authService"
 import { fetchArticles, createArticle } from "../services/articleService"
 import "./App.css"
 
+<>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</>
+
+
 export default function App() {
   const [articles, setArticles] = useState([])
   const [article, setArticle] = useState(null)
   const [writing, setWriting] = useState(false)
   const user = useAuthentication()
+  
 
   // This is a trivial app, so just fetch all the articles only when
   // a user logs in. A real app would do pagination. Note that
@@ -52,3 +59,4 @@ export default function App() {
     </div>
   )
 }
+
